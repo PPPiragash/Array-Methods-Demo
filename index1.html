@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: papayawhip;
+            border-radius: 15px;
+            margin-left: 400px;
+            margin-right: 400px;
+            margin-top: 100px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <h1>Array Methods Example</h1>
+        <form method="get" action="">
+            <p>Add Element : <input type="text" id="text1"> <button onclick="addText(event)">Add</button></p>
+            <p>Remove Element : <input type="clear" id="text2"> <button onclick="remText(event)">Remove</button></p>
+            <p><button onclick="sortText(event)" id="text3">Sort Array</button> <button onclick="revText(event)"
+                    id="text4">Reverse Array</button></p>
+            <p id="Original"></p>
+            <p id="result"></p>
+        </form>
+
+
+
+
+        <script>
+            let array = ["Apple", "Banana", "Cherry", "Date", "Grape"];
+            document.getElementById("Original").innerHTML = "Original Array:Apple,Banana,Cherry,Date,Grape";
+
+            function display() {
+                document.getElementById("result").innerHTML = "Result Array :" + array;
+            }
+
+            function addText(event) {
+                event.preventDefault();
+                let addele = document.getElementById("text1").value;
+                array.push(addele);
+                display();
+                document.getElementById("text1").value = "";
+            }
+
+            function remText(event) {
+                event.preventDefault();
+                let remele = document.getElementById("text2").value;
+                let delin = array.indexOf(remele);
+                array.splice(delin, 1);
+                display();
+                document.getElementById("text2").value = "";
+            }
+
+            function sortText(event) {
+                event.preventDefault();
+                let sorele = document.getElementById("text3").value;
+                array.sort();
+                display();
+            }
+
+            function revText(event) {
+                event.preventDefault();
+                let sorele = document.getElementById("text4").value;
+                array.reverse();
+                display();
+            }
+
+
+
+
+        </script>
+        <p> </p>
+    </div>
+</body>
+
+</html>
